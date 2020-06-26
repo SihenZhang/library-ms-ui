@@ -1,0 +1,16 @@
+{
+  "id": "1906262",
+  "name": "library-ms-ui",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12842791",
+      "name": "w_学生-201",
+      "font_class": "student",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    }
+  ]
+}

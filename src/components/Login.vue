@@ -8,7 +8,7 @@
       <!-- 表单 -->
       <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" class="login-form">
         <el-form-item>
-          <h2 class="form-title">欢迎使用图书馆管理系统</h2>
+          <h1 class="form-title">欢迎使用图书馆管理系统</h1>
         </el-form-item>
         <!-- 用户名 -->
         <el-form-item prop="username">
@@ -61,7 +61,7 @@ export default {
         // 发送post请求提交表单
         const { data: res } = await this.$http.post('login', this.loginForm)
         // 如果状态码不等于 200，表示登录失败，输出错误信息
-        if (res.code !== 200) return this.$message.error(res.message)
+        if (res.status !== 200) return this.$message.error(res.message)
         // 将登录成功之后的 token 保存到客户端的 localStorage 中
         window.localStorage.setItem('token', res.data.token)
         // 输出登录成功的消息

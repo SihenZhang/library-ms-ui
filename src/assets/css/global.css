@@ -6,3 +6,34 @@ body,
   margin: 0;
   padding: 0;
 }
+
+/* 使自定义字体图标与 element-ui 的图标样式一致 */
+.iconfont {
+  display: inline-block;
+  width: 24px;
+  margin-right: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1;
+  speak: none;
+}
+
+/* 为面包屑导航统一修改默认样式 */
+.el-breadcrumb {
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+/* 为表格统一修改默认样式 */
+.el-table {
+  margin-top: 15px;
+}
+
+/* 为分页统一修改默认样式 */
+.el-pagination {
+  margin-top: 15px;
+}
