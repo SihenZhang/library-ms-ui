@@ -14,7 +14,7 @@ Vue.prototype.$http = axios
 axios.defaults.baseURL = 'http://localhost:8090/api'
 // axios 请求拦截器，在请求头中挂载 token
 axios.interceptors.request.use(config => {
-  config.headers.Authorization = window.localStorage.getItem('token')
+  config.headers.Authorization = window.sessionStorage.getItem('token')
   return config
 })
 

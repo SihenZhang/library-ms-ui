@@ -7,6 +7,7 @@ import {
   Card,
   Col,
   Container,
+  Dialog,
   Form,
   FormItem,
   Header,
@@ -15,6 +16,7 @@ import {
   Menu,
   MenuItem,
   Message,
+  MessageBox,
   Pagination,
   Row,
   Step,
@@ -34,6 +36,7 @@ Vue.use(Button)
 Vue.use(Card)
 Vue.use(Col)
 Vue.use(Container)
+Vue.use(Dialog)
 Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Header)
@@ -42,6 +45,7 @@ Vue.use(Main)
 Vue.use(Menu)
 Vue.use(MenuItem)
 Vue.prototype.$message = Message
+Vue.prototype.$confirm = MessageBox.confirm
 Vue.use(Pagination)
 Vue.use(Row)
 Vue.use(Step)

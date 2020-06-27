@@ -109,7 +109,7 @@ export default {
   methods: {
     // 点击退出按钮，完成退出登录操作
     logout () {
-      window.localStorage.clear()
+      window.sessionStorage.clear()
       this.$router.push('/login')
     },
     // 点击按钮切换菜单的折叠状态

@@ -58,14 +58,14 @@ export default {
       this.$refs.loginFormRef.validate(async valid => {
         // 如果表单不合法，则拒绝提交
         if (!valid) return
-        // 发送post请求提交表单
+        // 发送 post 请求提交表单
         const { data: res } = await this.$http.post('login', this.loginForm)
         // 如果状态码不等于 200，表示登录失败，输出错误信息
         if (res.status !== 200) return this.$message.error(res.message)
-        // 将登录成功之后的 token 保存到客户端的 localStorage 中
-        window.localStorage.setItem('token', res.data.token)
+        // 将登录成功之后的 token 保存到客户端的 sessionStorage 中
+        window.sessionStorage.setItem('token', res.data.token)
         // 输出登录成功的消息
-        this.$message.success('登录成功')
+        this.$message.success(res.message)
         // 通过编程式导航跳转到后台主页
         this.$router.push('/home')
       })
