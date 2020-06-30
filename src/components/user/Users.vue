@@ -174,9 +174,10 @@ export default {
     this.getUserList()
   },
   methods: {
+    // 获取用户列表
     async getUserList () {
       const { data: res } = await this.$http.get('users', { params: this.queryInfo })
-      if (res.status !== 200) return this.$message.error('获取用户列表失败')
+      if (res.status !== 200) return this.$message.error(res.message)
       this.userlist = res.data.users
       this.total = res.data.total
     },
@@ -192,10 +193,10 @@ export default {
     },
     // 监听 switch 开关状态的改变
     async userActiveChange (user) {
-      const { data: res } = await this.$http.put(`users/${user.userId}/active/${user.active}`)
+      const { data: res } = await this.$http.put(`user/${user.userId}/active/${user.active}`)
       if (res.status !== 200) {
         user.active = !user.active
-        return this.$message.error('修改用户状态失败')
+        return this.$message.error(res.message)
       }
       this.$message.success(res.message)
     },
@@ -210,7 +211,7 @@ export default {
         if (!valid) return
         // 发送添加用户的请求
         const { data: res } = await this.$http.post('user', this.addForm)
-        if (res.status !== 201) return this.$message.error('添加用户失败')
+        if (res.status !== 201) return this.$message.error(res.message)
         this.$message.success(res.message)
         // 隐藏添加用户的对话框
         this.addDialogVisible = false
@@ -221,7 +222,7 @@ export default {
     // 显示编辑用户的对话框
     async showEditDialog (id) {
       const { data: res } = await this.$http.get(`user/${id}`)
-      if (res.status !== 200) return this.$message.error('查询用户信息失败')
+      if (res.status !== 200) return this.$message.error(res.message)
       this.editForm = res.data
       this.editDialogVisible = true
     },
@@ -240,7 +241,7 @@ export default {
           email: this.editForm.email,
           phone: this.editForm.phone
         })
-        if (res.status !== 200) return this.$message.error('更新用户信息失败')
+        if (res.status !== 200) return this.$message.error(res.message)
         this.$message.success(res.message)
         // 隐藏修改用户的对话框
         this.editDialogVisible = false
@@ -260,7 +261,7 @@ export default {
       // 如果用户取消了删除，则返回值为字符串 cancel
       if (confirmResult !== 'confirm') return this.$message.info('已取消删除')
       const { data: res } = await this.$http.delete(`user/${id}`)
-      if (res.status !== 200) return this.$message.error('删除用户失败')
+      if (res.status !== 200) return this.$message.error(res.message)
       this.$message.success(res.message)
       // 重新获取用户列表数据
       this.getUserList()

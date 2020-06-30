@@ -17,6 +17,17 @@ axios.interceptors.request.use(config => {
   config.headers.Authorization = window.sessionStorage.getItem('token')
   return config
 })
+// axios 响应拦截器，判断 token 是否过期
+axios.interceptors.response.use(response => {
+  // 如果响应结果状态码为 401，代表 token 已过期
+  if (response.data.status === 401) {
+    // 清空 sessionStorage
+    window.sessionStorage.clear()
+    // 跳转至登录页面
+    router.replace('login')
+  }
+  return response
+})
 
 Vue.config.productionTip = false
 
