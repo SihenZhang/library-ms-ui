@@ -4,6 +4,7 @@ import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
 import Index from '../components/Index.vue'
 import Users from '../components/user/Users.vue'
+import Category from '../components/books/Category.vue'
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,11 @@ const routes = [
         path: '/users',
         name: '用户管理页',
         component: Users
+      },
+      {
+        path: '/categories',
+        name: '图书分类管理页',
+        component: Category
       }
     ]
   }

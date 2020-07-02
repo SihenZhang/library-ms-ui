@@ -55,7 +55,7 @@ export default {
         {
           id: 101,
           name: '图书管理',
-          path: '',
+          path: '/books_manage',
           children: [
             {
               id: 102,
@@ -66,7 +66,7 @@ export default {
             {
               id: 104,
               name: '分类管理',
-              path: '/categorys',
+              path: '/categories',
               children: []
             }
           ]

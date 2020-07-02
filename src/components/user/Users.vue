@@ -15,7 +15,7 @@
             </el-input>
           </el-col>
           <el-col :span="4">
-            <el-button type="success" @click="addDialogVisible = true">添加用户</el-button>
+            <el-button type="success" icon="el-icon-plus" @click="addDialogVisible = true">添加用户</el-button>
           </el-col>
         </el-row>
         <!-- 用户列表区域 -->
@@ -26,7 +26,7 @@
           <el-table-column label="电话" prop="phone"></el-table-column>
           <el-table-column label="状态">
             <template v-slot="{ row: user }">
-              <el-switch v-model="user.active" @change="userActiveChange(user)"></el-switch>
+              <el-switch v-model="user.status" @change="userStatusChange(user)"></el-switch>
             </template>
           </el-table-column>
           <el-table-column label="操作">
@@ -192,10 +192,10 @@ export default {
       this.getUserList()
     },
     // 监听 switch 开关状态的改变
-    async userActiveChange (user) {
-      const { data: res } = await this.$http.put(`user/${user.userId}/active/${user.active}`)
+    async userStatusChange (user) {
+      const { data: res } = await this.$http.put(`user/${user.userId}/status/${user.status}`)
       if (res.status !== 200) {
-        user.active = !user.active
+        user.status = !user.status
         return this.$message.error(res.message)
       }
       this.$message.success(res.message)

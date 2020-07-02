@@ -10,16 +10,28 @@ body,
 /* 使自定义字体图标与 element-ui 的图标样式一致 */
 .iconfont {
   display: inline-block;
-  width: 24px;
-  margin-right: 5px;
-  font-size: 18px;
   font-weight: 400;
   font-variant: normal;
   text-transform: none;
-  text-align: center;
-  vertical-align: middle;
+  vertical-align: baseline;
   line-height: 1;
   speak: none;
+}
+
+.el-menu-item .iconfont {
+  width: 24px;
+  margin-right: 5px;
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.el-button .iconfont {
+  font-size: inherit;
+}
+
+.el-button .iconfont+span {
+  margin-left: 5px;
 }
 
 /* 为面包屑导航统一修改默认样式 */
