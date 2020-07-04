@@ -36,7 +36,7 @@
       <el-steps :space="300" :active="2" finish-status="success">
         <el-step title="完成登录功能" description="完成于 2020/6/25"></el-step>
         <el-step title="完成用户管理功能" description="2020/6/26 完成导航栏、用户管理界面，完成于 2020/6/27"></el-step>
-        <el-step title="完成图书管理功能" description="2020/7/2 完成分类管理列表界面"></el-step>
+        <el-step title="完成图书管理功能" description="2020/7/2 完成分类管理列表界面，2020/7/4 完成分类管理功能"></el-step>
         <el-step title="完成学生管理功能" description="TBD"></el-step>
         <el-step title="完成借阅信息管理功能" description="TBD"></el-step>
       </el-steps>

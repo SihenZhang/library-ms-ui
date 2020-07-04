@@ -80,7 +80,7 @@ export default {
     return {
       // 获取图书分类列表的参数对象
       queryInfo: {
-        type: 3,
+        level: 3,
         // 当前的页数
         current: 1,
         // 当前每页显示多少条数据
