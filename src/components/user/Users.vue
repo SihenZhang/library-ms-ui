@@ -31,8 +31,8 @@
           </el-table-column>
           <el-table-column label="操作">
             <template v-slot="{ row: user }">
-              <!-- 修改按钮 -->
-                <el-tooltip effect="dark" content="修改用户" placement="top" :enterable="false">
+              <!-- 编辑按钮 -->
+                <el-tooltip effect="dark" content="编辑用户" placement="top" :enterable="false">
                   <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog(user.userId)"></el-button>
                 </el-tooltip>
               <!-- 删除按钮 -->
@@ -62,13 +62,13 @@
             </el-form-item>
           </el-form>
           <!-- 底部区域 -->
-          <span slot="footer" class="dialog-footer">
+          <span slot="footer">
             <el-button @click="addDialogVisible = false">取 消</el-button>
             <el-button type="primary" @click="addUser">确 定</el-button>
           </span>
         </el-dialog>
-        <!-- 修改用户的对话框 -->
-        <el-dialog title="修改用户" :visible.sync="editDialogVisible" width="50%" @close="editDialogClosed">
+        <!-- 编辑用户的对话框 -->
+        <el-dialog title="编辑用户" :visible.sync="editDialogVisible" width="50%" @close="editDialogClosed">
           <!-- 内容主体区域 -->
           <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="70px">
             <el-form-item label="用户名" prop="username">
@@ -82,7 +82,7 @@
             </el-form-item>
           </el-form>
           <!-- 底部区域 -->
-          <span slot="footer" class="dialog-footer">
+          <span slot="footer">
             <el-button @click="editDialogVisible = false">取 消</el-button>
             <el-button type="primary" @click="editUser">确 定</el-button>
           </span>
@@ -95,7 +95,7 @@
 export default {
   data () {
     // 验证邮箱的规则
-    var checkEmail = (rule, value, callback) => {
+    const checkEmail = (rule, value, callback) => {
       if (!value || value === '') return callback()
       // 验证邮箱的正则表达式
       const regEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/
@@ -104,7 +104,7 @@ export default {
       callback(new Error('请输入合法的邮箱'))
     }
     // 验证电话号码的规则
-    var checkPhone = (rule, value, callback) => {
+    const checkPhone = (rule, value, callback) => {
       if (!value || value === '') return callback()
       // 验证电话号码的正则表达式
       const regPhone = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/
@@ -151,11 +151,11 @@ export default {
           { validator: checkPhone, trigger: 'blur' }
         ]
       },
-      // 控制修改用户对话框的显示与隐藏
+      // 控制编辑用户对话框的显示与隐藏
       editDialogVisible: false,
       // 查询到的用户信息对象
       editForm: {},
-      // 修改表单的验证规则对象
+      // 编辑表单的验证规则对象
       editFormRules: {
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
@@ -226,16 +226,16 @@ export default {
       this.editForm = res.data
       this.editDialogVisible = true
     },
-    // 监听修改用户对话框的关闭事件
+    // 监听编辑用户对话框的关闭事件
     editDialogClosed () {
       this.$refs.editFormRef.resetFields()
     },
-    // 点击按钮，修改用户
+    // 点击按钮，编辑用户
     editUser () {
       this.$refs.editFormRef.validate(async valid => {
         // 如果表单不合法，则拒绝提交
         if (!valid) return
-        // 发送修改用户的请求
+        // 发送编辑用户的请求
         const { data: res } = await this.$http.put(`user/${this.editForm.userId}`, {
           username: this.editForm.username,
           email: this.editForm.email,
@@ -243,7 +243,7 @@ export default {
         })
         if (res.status !== 200) return this.$message.error(res.message)
         this.$message.success(res.message)
-        // 隐藏修改用户的对话框
+        // 隐藏编辑用户的对话框
         this.editDialogVisible = false
         // 重新获取用户列表数据
         this.getUserList()
@@ -252,7 +252,7 @@ export default {
     // 根据 id 删除对应的用户
     async removeUserById (id) {
       // 弹框询问用户是否删除数据
-      const confirmResult = await this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
+      const confirmResult = await this.$confirm('此操作将永久删除该用户, 是否继续？', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'

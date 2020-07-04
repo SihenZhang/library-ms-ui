@@ -5,6 +5,7 @@ import {
   BreadcrumbItem,
   Button,
   Card,
+  Cascader,
   Col,
   Container,
   Dialog,
@@ -34,6 +35,7 @@ Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
 Vue.use(Button)
 Vue.use(Card)
+Vue.use(Cascader)
 Vue.use(Col)
 Vue.use(Container)
 Vue.use(Dialog)
