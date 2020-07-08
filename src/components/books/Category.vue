@@ -169,7 +169,7 @@ export default {
     },
     // 获取父级分类的数据列表
     async getParentCateList () {
-      const { data: res } = await this.$http.get('categories', { params: { type: 2 } })
+      const { data: res } = await this.$http.get('categories', { params: { level: 2 } })
       if (res.status !== 200) return this.$message.error(res.message)
       this.parentCateList = res.data.categories
       // 为父级分类列表新增 label 属性用于显示

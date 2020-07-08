@@ -5,6 +5,7 @@ import Home from '../components/Home.vue'
 import Index from '../components/Index.vue'
 import Users from '../components/user/Users.vue'
 import Category from '../components/books/Category.vue'
+import Book from '../components/books/Book.vue'
 
 Vue.use(VueRouter)
 
@@ -36,8 +37,13 @@ const routes = [
       },
       {
         path: '/categories',
-        name: '图书分类管理页',
+        name: '分类管理页',
         component: Category
+      },
+      {
+        path: '/books',
+        name: '书籍管理页',
+        component: Book
       }
     ]
   }

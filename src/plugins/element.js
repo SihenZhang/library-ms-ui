@@ -13,13 +13,16 @@ import {
   FormItem,
   Header,
   Input,
+  InputNumber,
   Main,
   Menu,
   MenuItem,
   Message,
   MessageBox,
+  Option,
   Pagination,
   Row,
+  Select,
   Step,
   Steps,
   Submenu,
@@ -43,13 +46,16 @@ Vue.use(Form)
 Vue.use(FormItem)
 Vue.use(Header)
 Vue.use(Input)
+Vue.use(InputNumber)
 Vue.use(Main)
 Vue.use(Menu)
 Vue.use(MenuItem)
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
+Vue.use(Option)
 Vue.use(Pagination)
 Vue.use(Row)
+Vue.use(Select)
 Vue.use(Step)
 Vue.use(Steps)
 Vue.use(Submenu)
