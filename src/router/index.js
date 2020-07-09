@@ -3,9 +3,10 @@ import VueRouter from 'vue-router'
 import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
 import Index from '../components/Index.vue'
-import Users from '../components/user/Users.vue'
-import Category from '../components/books/Category.vue'
-import Book from '../components/books/Book.vue'
+import User from '../components/user/User.vue'
+import Category from '../components/book/Category.vue'
+import Book from '../components/book/Book.vue'
+import Student from '../components/student/Student.vue'
 
 Vue.use(VueRouter)
 
@@ -33,7 +34,7 @@ const routes = [
       {
         path: '/users',
         name: '用户管理页',
-        component: Users
+        component: User
       },
       {
         path: '/categories',
@@ -44,6 +45,11 @@ const routes = [
         path: '/books',
         name: '书籍管理页',
         component: Book
+      },
+      {
+        path: '/students',
+        name: '学生管理页',
+        component: Student
       }
     ]
   }

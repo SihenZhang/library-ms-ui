@@ -21,6 +21,8 @@ import {
   MessageBox,
   Option,
   Pagination,
+  Radio,
+  RadioGroup,
   Row,
   Select,
   Step,
@@ -54,6 +56,8 @@ Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
 Vue.use(Option)
 Vue.use(Pagination)
+Vue.use(Radio)
+Vue.use(RadioGroup)
 Vue.use(Row)
 Vue.use(Select)
 Vue.use(Step)

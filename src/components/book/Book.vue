@@ -150,6 +150,9 @@ export default {
         ],
         bookAuthor: [
           { required: true, message: '请输入作者', trigger: 'blur' }
+        ],
+        bookTotal: [
+          { required: true }
         ]
       },
       // 查询得到的分类列表
@@ -176,6 +179,9 @@ export default {
         ],
         bookAuthor: [
           { required: true, message: '请输入作者', trigger: 'blur' }
+        ],
+        bookTotal: [
+          { required: true }
         ]
       }
     }

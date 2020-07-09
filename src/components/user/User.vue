@@ -29,16 +29,12 @@
               <el-switch v-model="user.status" @change="userStatusChange(user)"></el-switch>
             </template>
           </el-table-column>
-          <el-table-column label="操作">
+          <el-table-column label="操作" width="200px">
             <template v-slot="{ row: user }">
               <!-- 编辑按钮 -->
-                <el-tooltip effect="dark" content="编辑用户" placement="top" :enterable="false">
-                  <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog(user.userId)"></el-button>
-                </el-tooltip>
+                <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog(user.userId)">编辑</el-button>
               <!-- 删除按钮 -->
-                <el-tooltip effect="dark" content="删除用户" placement="top" :enterable="false">
-                  <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeUserById(user.userId)"></el-button>
-                </el-tooltip>
+                <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeUserById(user.userId)">删除</el-button>
             </template>
           </el-table-column>
         </el-table>
