@@ -144,6 +144,10 @@ export default {
         {
           value: 1,
           label: '学号'
+        },
+        {
+          value: 2,
+          label: '专业'
         }
       ],
       // 查询得到的学生列表
