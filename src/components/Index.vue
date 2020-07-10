@@ -33,16 +33,88 @@
         <el-button type="success" icon="iconfont icon-github">后端接口工程</el-button>
       </a>
       <h2>进度</h2>
-      <el-steps :space="300" :active="4" finish-status="success">
-        <el-step title="完成登录功能" description="完成于 2020/6/25"></el-step>
-        <el-step title="完成用户管理功能" description="2020/6/26 完成导航栏、用户管理界面，完成于 2020/6/27"></el-step>
-        <el-step title="完成图书管理功能" description="2020/7/2 完成分类管理列表界面，2020/7/4 完成分类管理功能，完成于 2020/7/8"></el-step>
-        <el-step title="完成学生管理功能" description="完成于 2020/7/9"></el-step>
-        <el-step title="完成借阅信息管理功能" description="TBD"></el-step>
-      </el-steps>
+      <el-timeline>
+        <el-timeline-item v-for="(progress, index) in progresses" :key="index" :icon="progress.icon" :type="progress.type" :size="progress.size" :timestamp="progress.timestamp">
+          {{progress.content}}
+        </el-timeline-item>
+      </el-timeline>
     </el-card>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      progresses: [
+        {
+          content: '完成登录界面的布局设计及登录的全部功能',
+          timestamp: '2020-06-25',
+          size: 'large',
+          type: 'success',
+          icon: 'el-icon-check'
+        },
+        {
+          content: '完成导航栏的布局设计',
+          timestamp: '2020-06-26',
+          size: 'large',
+          type: 'success',
+          icon: 'el-icon-check'
+        },
+        {
+          content: '完成用户管理界面的布局设计',
+          timestamp: '2020-06-26',
+          size: 'large',
+          type: 'success',
+          icon: 'el-icon-check'
+        },
+        {
+          content: '完成用户管理的全部功能',
+          timestamp: '2020-06-27',
+          size: 'large',
+          type: 'success',
+          icon: 'el-icon-check'
+        },
+        {
+          content: '完成分类管理界面的布局设计',
+          timestamp: '2020-07-02',
+          size: 'large',
+          type: 'success',
+          icon: 'el-icon-check'
+        },
+        {
+          content: '完成分类管理的全部功能',
+          timestamp: '2020-07-04',
+          size: 'large',
+          type: 'success',
+          icon: 'el-icon-check'
+        },
+        {
+          content: '完成书籍管理界面的布局设计及书籍管理的全部功能',
+          timestamp: '2020-07-08',
+          size: 'large',
+          type: 'success',
+          icon: 'el-icon-check'
+        },
+        {
+          content: '完成学生管理界面的布局设计及学生管理的全部功能',
+          timestamp: '2020-07-09',
+          size: 'large',
+          type: 'success',
+          icon: 'el-icon-check'
+        },
+        {
+          content: '完成借阅信息管理界面的布局设计及借阅信息管理的全部功能',
+          timestamp: '2020-07-10',
+          size: 'large',
+          type: 'success',
+          icon: 'el-icon-check'
+        }
+      ]
+    }
+  }
+}
+</script>
 
 <style lang="less" scoped>
   .el-tag + .el-tag {

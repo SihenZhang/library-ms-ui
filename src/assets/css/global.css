@@ -49,3 +49,13 @@ body,
 .el-pagination {
   margin-top: 15px;
 }
+
+/* 为步骤条统一修改默认样式 */
+.el-steps {
+  margin: 15px auto;
+}
+
+/* 可单选的表格中的单选框不显示 label */
+.select-table .el-radio .el-radio__label {
+  display: none;
+}

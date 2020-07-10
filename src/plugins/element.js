@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import {
+  Alert,
   Aside,
   Breadcrumb,
   BreadcrumbItem,
@@ -8,6 +9,7 @@ import {
   Cascader,
   Col,
   Container,
+  DatePicker,
   Dialog,
   Form,
   FormItem,
@@ -31,10 +33,15 @@ import {
   Switch,
   Table,
   TableColumn,
+  Tabs,
+  TabPane,
   Tag,
+  Timeline,
+  TimelineItem,
   Tooltip
 } from 'element-ui'
 
+Vue.use(Alert)
 Vue.use(Aside)
 Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
@@ -43,6 +50,7 @@ Vue.use(Card)
 Vue.use(Cascader)
 Vue.use(Col)
 Vue.use(Container)
+Vue.use(DatePicker)
 Vue.use(Dialog)
 Vue.use(Form)
 Vue.use(FormItem)
@@ -66,5 +74,9 @@ Vue.use(Submenu)
 Vue.use(Switch)
 Vue.use(Table)
 Vue.use(TableColumn)
+Vue.use(Tabs)
+Vue.use(TabPane)
 Vue.use(Tag)
+Vue.use(Timeline)
+Vue.use(TimelineItem)
 Vue.use(Tooltip)

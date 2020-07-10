@@ -7,6 +7,8 @@ import User from '../components/user/User.vue'
 import Category from '../components/book/Category.vue'
 import Book from '../components/book/Book.vue'
 import Student from '../components/student/Student.vue'
+import Lease from '../components/lease/Lease.vue'
+import AddLease from '../components/lease/AddLease.vue'
 
 Vue.use(VueRouter)
 
@@ -50,6 +52,16 @@ const routes = [
         path: '/students',
         name: '学生管理页',
         component: Student
+      },
+      {
+        path: '/leases',
+        name: '借阅信息管理页',
+        component: Lease
+      },
+      {
+        path: '/leases/add',
+        name: '添加借阅信息页',
+        component: AddLease
       }
     ]
   }

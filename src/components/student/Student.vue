@@ -25,7 +25,7 @@
             <el-button type="success" icon="el-icon-plus" @click="addDialogVisible = true">添加学生</el-button>
           </el-col>
         </el-row>
-        <!-- 书籍列表区域 -->
+        <!-- 学生列表区域 -->
         <el-table :data="studentlist" border stripe>
           <el-table-column type="index" label="#"></el-table-column>
           <el-table-column label="学号" prop="stuNum"></el-table-column>
@@ -139,11 +139,11 @@ export default {
       queryTypeList: [
         {
           value: 0,
-          label: '姓名'
+          label: '学号'
         },
         {
           value: 1,
-          label: '学号'
+          label: '姓名'
         },
         {
           value: 2,
