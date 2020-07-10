@@ -294,7 +294,7 @@ export default {
       const { data: res } = await this.$http.delete(`student/${id}`)
       if (res.status !== 200) return this.$message.error(res.message)
       this.$message.success(res.message)
-      // 重新获取用户列表数据
+      // 重新获取学生列表数据
       this.getStudentList()
     }
   }
