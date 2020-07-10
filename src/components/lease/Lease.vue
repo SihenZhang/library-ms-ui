@@ -173,7 +173,7 @@ export default {
     // 根据 id 删除对应的借阅信息
     async removeLeaseById (id) {
       // 弹框询问用户是否删除数据
-      const confirmResult = await this.$confirm('此操作将永久删除该学生, 是否继续？', '提示', {
+      const confirmResult = await this.$confirm('此操作将永久删除该借阅信息, 是否继续？', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'

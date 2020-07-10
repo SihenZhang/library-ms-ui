@@ -79,7 +79,7 @@
           </span>
         </el-dialog>
         <!-- 编辑书籍的对话框 -->
-        <el-dialog title="添加书籍" :visible.sync="editDialogVisible" width="50%" @close="editDialogClosed">
+        <el-dialog title="编辑书籍" :visible.sync="editDialogVisible" width="50%" @close="editDialogClosed">
           <!-- 编辑书籍的表单 -->
           <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="70px">
             <el-form-item label="书名" prop="bookName">
